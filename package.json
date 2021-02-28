@@ -8,6 +8,7 @@
   },
   "keywords": [
     "Rest",
+    "RESTFly",
     "API",
     "Test",
     "Kit"
@@ -19,7 +20,6 @@
     "node-static": "^0.7.11"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "restify": "^8.5.1",
     "restify-clients": "^4.0.0"
   }
