@@ -1,0 +1,64 @@
+input{
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance:none ;
+outline: 0;
+}
+li{
+min-height: 30px;
+min-width: 300px;
+padding: 0px;
+}
+.title{
+padding:8px;
+font-size:20px;
+}
+.label{
+min-width:120px;
+display: block;
+padding:1px;
+}
+.button{
+width:120px;
+}
+#content{
+border: 1px solid #ccc;
+height: 100%;
+}
+#leftForm{
+width:49%;
+position:relative;
+float:left;
+/*border:1px solid #ccc;*/
+}
+#middleBanner{
+width:2%;
+position:relative;
+float:left;
+background-color: #ccc;
+height:100%;
+}
+#rightResult{
+width:49%;
+float:left;
+position:relative;
+overflow:auto;
+height:100%;
+}
+
+pre {
+width:100%;
+white-space:pre-wrap; /* css3.0 */ 
+white-space:-moz-pre-wrap; /* Firefox */ 
+white-space:-pre-wrap; /* Opera 4-6 */ 
+white-space:-o-pre-wrap; /* Opera 7 */ 
+word-wrap:break-word; /* Internet Explorer 5.5+ */  
+outline: 1px solid #ccc;
+/*padding: 5px;*/
+/**margin: 5px;*/
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }

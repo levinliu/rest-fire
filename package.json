@@ -1,0 +1,26 @@
+{
+  "name": "restfly",
+  "version": "1.0.0",
+  "description": "quick test on REST api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Rest",
+    "API",
+    "Test",
+    "Kit"
+  ],
+  "author": "levin",
+  "license": "MIT",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "node-static": "^0.7.11"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "restify": "^8.5.1",
+    "restify-clients": "^4.0.0"
+  }
+}

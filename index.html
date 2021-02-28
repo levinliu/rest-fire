@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>RESTFly</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="content">
+<div id="leftForm">
+<form id="testForm">
+<div class="title">&nbsp;RESTFLY >_ Lite API Test Tool </div>
+<ul>
+<li>
+<div><div class="label">Site</div><input type="text" name="site" id="site" value="http://localhost:8080"/>
+</div>
+</li>
+<li>
+<div>
+ <div class="label">API URI</div>
+ <input type="text" name="apiUri" id="apiUri" value="/"/>
+</div>
+</li>
+<li>
+<div>
+<div class="label">Method</div>
+<select name="method" id="method" >
+<option value="GET">GET</option>
+<option value="POST">POST</option>
+<option value="PUT">PUT</option>
+<option value="DELETE">DELETE</option>
+</select>
+</div>
+</li>
+<li>
+<div>
+<div class="label">RequestBody</div>
+<div>
+</li>
+<li>
+<div>
+<textarea name="reqBody" id="reqBody" cols="20" rows="5"></textarea>
+</div>
+</li>
+<li>
+<div>
+<input class="button" type="button" value="test" onclick="test()"/>
+&nbsp;&nbsp;
+<input class="button" type="reset" value="reset"/>
+</div>
+</li>
+</ul>
+</form>
+</div>
+<div id="middleBanner">&nbsp;</div>
+<div id="rightResult">
+<div class="title">Response Here</div>
+<pre id="result"></pre>
+</div>
+</div>
+</body>
+<script src="/http.js"></script>
+<script src="/json.js"></script>
+<script>
+function $(id){ return document.getElementById(id);}
+function test(){
+var site = $("site")
+console.log('site='+site.value);
+var apiUri = $("apiUri");
+var meth = $("method").value;
+var reqBody = $("reqBody").value;
+var url = site.value + apiUri.value
+// alert("Invoke API " + url + ", meth: " + meth + "\n" + reqBody);
+/**
+ajax(meth, url, reqBody, function(resp){
+  console.log('resp is ' + resp);
+}); **/
+var url2 = '/test';
+console.log('proxy url: ' + url2);
+console.log('method:' + meth);
+var req2 = {site:site.value, apiUri: url, meth: meth, data: reqBody};
+req2 = JSON.stringify(req2);
+var contentType = "application/json";
+ajax('post', url2, req2, contentType, function(resp){
+  console.log('resp is ' + resp);
+  var data = JSON.parse(resp);
+  $('result').innerHTML = syntaxHighlight(data);
+});
+}
+</script>
+</html>
