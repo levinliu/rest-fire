@@ -1,10 +1,15 @@
 const restify = require('restify');
-
-const server = restify.createServer({name: 'restfly', version: '1.0.0'});
+const APP_NAME = 'REST-Fire'
+const server = restify.createServer({name: APP_NAME, version: '1.0.0'});
 
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
+server.use(function crossOrigin(req,res,next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    return next();
+});
 
 server.post('/test', function(req, res, next) {
   // console.log('params=' + JSON.stringify(req.params));
@@ -72,7 +77,7 @@ server.get('/*', restify.plugins.serveStaticFiles(dir, {
   maxAge: 3600000, // this is in millisecs
   etag: false,
   setHeaders: function setCustomHeaders(response, requestedPath, stat) {
-    response.setHeader('RESTFly', 'RESTFly');
+    response.setHeader('Server', APP_NAME);
   }
 }));
 

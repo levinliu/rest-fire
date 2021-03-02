@@ -1,5 +1,5 @@
 {
-  "name": "restfly",
+  "name": "rest-fire",
   "version": "1.0.0",
   "description": "quick test on REST api",
   "main": "app.js",
@@ -8,7 +8,7 @@
   },
   "keywords": [
     "Rest",
-    "RESTFly",
+    "RESTFire",
     "API",
     "Test",
     "Kit"

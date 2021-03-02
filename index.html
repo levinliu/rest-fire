@@ -85,7 +85,7 @@
       site: site.value,
       apiUri: url,
       meth: meth,
-      data: JSON.parse(reqBody)
+      data: reqBody?JSON.parse(reqBody):''
     };
     wrapReq = JSON.stringify(wrapReq);
     var contentType = "application/json";

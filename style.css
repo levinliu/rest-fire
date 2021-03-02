@@ -51,15 +51,17 @@ li {
 }
 
 #content {
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   height: 90%;
 }
 
 #leftForm {
   width: 49%;
+  margin-left: 0;
   position: relative;
   float: left;
-  /*border:1px solid #ccc;*/
+  overflow: auto;
+
 }
 
 #middleBanner {
@@ -71,7 +73,6 @@ li {
 }
 
 #rightResult {
-  width: 49%;
   float: left;
   position: relative;
   overflow: auto;
