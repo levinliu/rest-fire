@@ -1,68 +1,74 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>RESTFire</title>
-  <meta name="author" content="levin">
-  <meta name="keywords" content="RESTFire,NodeJs">
-  <link rel="stylesheet" href="/style.css">
+    <meta charset="utf-8">
+    <title>RESTFire</title>
+    <meta name="author" content="levin">
+    <meta name="keywords" content="RESTFire,NodeJs">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <div class="header" ><div class="nav_left">RESTFire </div><div class="nav_right"><a href="https://github.com/levinliu/restfly">GitHub</a>&nbsp;</div></div>
-  <div id="content">
-    <div id="leftForm">
-      <form id="testForm">
-        <div class="title">&nbsp;Fire a API request </div>
-        <ul>
-          <li>
-            <div>
-              <div class="label">Site</div><input type="text" name="site" id="site" value="http://localhost:8080" />
+<div class="header">
+    <div class="nav_left">RESTFire</div>
+    <div class="nav_right"><a href="https://github.com/levinliu/restfly">GitHub</a>&nbsp;</div>
+</div>
+<div class="container">
+    <div class="leftForm">
+        <form id="testForm">
+            <div class="title">&nbsp;Fire a API request</div>
+            <div class="formFields">
+                <ul>
+                    <li>
+                        <div>
+                            <div class="label">Site</div>
+                            <input type="text" name="site" id="site" value="http://localhost:8080"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="label">API URI</div>
+                            <input type="text" name="apiUri" id="apiUri" value="/"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="label">Method</div>
+                            <select name="method" id="method">
+                                <option value="GET">GET</option>
+                                <option value="POST">POST</option>
+                                <option value="PUT">PUT</option>
+                                <option value="DELETE">DELETE</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="label">RequestBody</div>
+                            <div>
+                    </li>
+                    <li>
+                        <div>
+                            <textarea name="reqBody" id="reqBody" cols="20" rows="5"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input class="button" type="button" value="test" onclick="test()"/>
+                            &nbsp;&nbsp;
+                            <input class="button" type="reset" value="reset"/>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li>
-            <div>
-              <div class="label">API URI</div>
-              <input type="text" name="apiUri" id="apiUri" value="/" />
-            </div>
-          </li>
-          <li>
-            <div>
-              <div class="label">Method</div>
-              <select name="method" id="method">
-                <option value="GET">GET</option>
-                <option value="POST">POST</option>
-                <option value="PUT">PUT</option>
-                <option value="DELETE">DELETE</option>
-              </select>
-            </div>
-          </li>
-          <li>
-            <div>
-              <div class="label">RequestBody</div>
-              <div>
-          </li>
-          <li>
-            <div>
-              <textarea name="reqBody" id="reqBody" cols="20" rows="5"></textarea>
-            </div>
-          </li>
-          <li>
-            <div>
-              <input class="button" type="button" value="test" onclick="test()" />
-              &nbsp;&nbsp;
-              <input class="button" type="reset" value="reset" />
-            </div>
-          </li>
-        </ul>
-      </form>
+        </form>
     </div>
-    <div id="middleBanner">&nbsp;</div>
-    <div id="rightResult">
-      <div class="title">Response Here</div>
-      <pre id="result"></pre>
+    <div class="middleBanner">&nbsp;</div>
+    <div class="rightResult">
+        <div class="title">Response Here</div>
+        <pre id="result"></pre>
     </div>
-  </div>
+</div>
 </body>
 <script src="/http.js"></script>
 <script src="/json.js"></script>
@@ -85,7 +91,7 @@
       site: site.value,
       apiUri: url,
       meth: meth,
-      data: JSON.parse(reqBody)
+      data: reqBody?JSON.parse(reqBody):''
     };
     wrapReq = JSON.stringify(wrapReq);
     var contentType = "application/json";
@@ -96,6 +102,7 @@
       $('result').innerHTML = syntaxHighlight(data);
     });
   }
+
 </script>
 
 </html>

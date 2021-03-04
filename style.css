@@ -1,14 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   outline: 0;
 }
-
-li {
+ul li {
   min-height: 30px;
   min-width: 300px;
   padding: 0px;
+}
+.formFields ul li{
+  margin-left:8px;
+  padding-top:4px;
+  padding-bottom:4px;
 }
 
 .title {
@@ -29,7 +37,10 @@ li {
 .header {
   background-color: black;
   height: 44px;
+  width:100%;
   text-decoration: none;
+  color:#FFF;
+  font-size: 20px;
 }
 .header a{
   color: #FFF;
@@ -37,10 +48,7 @@ li {
 .header div{
   padding: 12px;
 }
-.header{
-  color:#FFF;
-  font-size: 20px;
-}
+
 .nav_left{
   position: relative;
   float: left;
@@ -50,29 +58,27 @@ li {
   float: right;
 }
 
-#content {
-  border: 1px solid #ccc;
-  height: 90%;
-}
+.container{
+            position: absolute;
+            width: 100%;
+            display: flex;
+            top: 44px;
+            bottom: 0px;
+        }
 
-#leftForm {
+.leftForm {
   width: 49%;
-  position: relative;
-  float: left;
-  /*border:1px solid #ccc;*/
+  height: 100%;
 }
 
-#middleBanner {
+.middleBanner {
   width: 2%;
-  position: relative;
-  float: left;
   background-color: #ccc;
   height: 100%;
 }
 
-#rightResult {
+.rightResult {
   width: 49%;
-  float: left;
   position: relative;
   overflow: auto;
   height: 100%;
@@ -98,19 +104,15 @@ pre {
 .string {
   color: green;
 }
-
 .number {
   color: darkorange;
 }
-
 .boolean {
   color: blue;
 }
-
 .null {
   color: magenta;
 }
-
 .key {
   color: red;
 }
